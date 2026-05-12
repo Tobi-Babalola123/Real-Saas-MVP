@@ -12,6 +12,7 @@ import { HiArrowRight, HiCheckCircle, HiSparkles } from "react-icons/hi2";
 import { FiArrowUpRight } from "react-icons/fi";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { supabase } from "@/lib/supabase";
 
 const containerVariants = {
@@ -181,9 +182,9 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Maximize Your Solar{" "}
+            AI-Powered Solar CRM{" "}
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Output
+              for Modern Energy Teams
             </span>
           </motion.h1>
 
@@ -193,9 +194,8 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Real-time monitoring, predictive maintenance, and automated
-            optimization for your solar facilities. Increase efficiency by up to
-            35% with AI-powered insights.
+            Capture leads, automate follow-ups, manage deals, and grow your
+            solar business with AI-powered workflows.
           </motion.p>
 
           <motion.div
@@ -379,6 +379,7 @@ export default function Home() {
                 )}
               </AnimatePresence>
             </>
+
             <motion.button
               className="px-8 py-4 font-semibold border border-primary/30 text-foreground rounded-lg hover:bg-primary/5 transition-colors"
               whileHover={{ scale: 1.05 }}
@@ -396,97 +397,57 @@ export default function Home() {
           >
             14-day free trial • No credit card required
           </motion.p>
+          <motion.div
+            className="flex flex-wrap items-center justify-center gap-8 pt-8 opacity-70"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+          >
+            {["Tesla Energy", "SunPeak", "GreenVolt", "EcoGrid"].map(
+              (brand) => (
+                <div
+                  key={brand}
+                  className="text-sm font-semibold tracking-widest text-muted-foreground"
+                >
+                  {brand}
+                </div>
+              ),
+            )}
+          </motion.div>
         </div>
       </section>
 
       {/* Problems Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-card/20 to-transparent">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-transparent pointer-events-none" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
-            className="text-center mb-20"
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
+            transition={{ duration: 0.8 }}
+            className="relative rounded-3xl overflow-hidden border border-primary/20 bg-gradient-to-b from-card/60 to-transparent backdrop-blur-xl p-2"
           >
-            <motion.p
-              className="text-primary text-sm font-semibold tracking-wide uppercase mb-4"
-              variants={itemVariants}
-            >
-              Challenges
-            </motion.p>
-            <motion.h2
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-balance text-foreground"
-              variants={itemVariants}
-            >
-              Problems Facing Solar Operators
-            </motion.h2>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
-          >
-            {[
-              {
-                icon: MdSpeed,
-                title: "Slow Issue Detection",
-                desc: "Hours to identify performance problems",
-              },
-              {
-                icon: MdTrendingUp,
-                title: "Hidden Losses",
-                desc: "Inefficiencies costing thousands monthly",
-              },
-              {
-                icon: MdDashboard,
-                title: "Fragmented Data",
-                desc: "Systems scattered across multiple tools",
-              },
-              {
-                icon: MdAutoAwesome,
-                title: "Manual Processes",
-                desc: "Reactive maintenance, not predictive",
-              },
-              {
-                icon: HiCheckCircle,
-                title: "No Optimization",
-                desc: "Missing opportunities for efficiency gains",
-              },
-              {
-                icon: FiArrowUpRight,
-                title: "Limited Insights",
-                desc: "No actionable analytics for growth",
-              },
-            ].map((problem, i) => {
-              const Icon = problem.icon;
-              return (
-                <motion.div
-                  key={i}
-                  variants={itemVariants}
-                  whileHover={{ y: -8, borderColor: "var(--color-primary)" }}
-                  className="group p-6 rounded-2xl border border-primary/10 bg-card/30 backdrop-blur-sm hover:bg-card/50 transition-all duration-300"
-                >
-                  <Icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-lg font-semibold mb-2 text-foreground">
-                    {problem.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {problem.desc}
-                  </p>
-                </motion.div>
-              );
-            })}
+            <div className="relative rounded-3xl overflow-hidden bg-background/80">
+              <Image
+                src="/hero-product.jpg"
+                alt="SolarFlow AI Dashboard"
+                width={1400}
+                height={800}
+                className="w-full h-auto rounded-3xl object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-40" />
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-primary/10 to-transparent blur-3xl opacity-40 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             className="text-center mb-20"
             initial="hidden"
@@ -506,6 +467,13 @@ export default function Home() {
             >
               Powerful Tools for Solar Teams
             </motion.h2>
+            <motion.p
+              className="text-muted-foreground text-lg mt-6 max-w-2xl mx-auto"
+              variants={itemVariants}
+            >
+              Everything you need to monitor, optimize, and manage your solar
+              operations
+            </motion.p>
           </motion.div>
 
           <motion.div
@@ -584,10 +552,12 @@ export default function Home() {
       </section>
 
       {/* Dashboard Preview */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent via-primary/5 to-transparent">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent via-primary/3 to-transparent relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-accent/10 blur-3xl opacity-30 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-20"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -597,86 +567,45 @@ export default function Home() {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-balance text-foreground mb-6"
               variants={itemVariants}
             >
-              Beautiful Dashboard
+              Intelligent Control Center
             </motion.h2>
             <motion.p
               className="text-muted-foreground text-lg max-w-2xl mx-auto"
               variants={itemVariants}
             >
-              Comprehensive control panel with real-time insights and actionable
-              intelligence
+              Real-time monitoring with AI-powered insights and predictive
+              analytics
             </motion.p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 60, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="relative rounded-3xl border border-primary/20 bg-card/40 backdrop-blur-2xl p-8 overflow-hidden"
+            transition={{ duration: 0.9, ease: [0.23, 1, 0.82, 0.67] }}
+            className="relative rounded-3xl border border-primary/30 bg-gradient-to-br from-card/70 via-card/40 to-background/50 backdrop-blur-2xl p-1 overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none" />
-            <div className="relative space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                {[
-                  { label: "Total Output", value: "2.4 MW", change: "+12%" },
-                  { label: "Efficiency", value: "94.2%", change: "+3%" },
-                  { label: "Alerts", value: "2", change: "-1" },
-                  { label: "Revenue", value: "$18.4K", change: "+18%" },
-                ].map((stat, i) => (
-                  <motion.div
-                    key={i}
-                    className="p-4 rounded-xl bg-background/50 border border-primary/10"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                  >
-                    <p className="text-muted-foreground text-xs mb-2 uppercase tracking-wide">
-                      {stat.label}
-                    </p>
-                    <p className="text-2xl font-bold text-foreground">
-                      {stat.value}
-                    </p>
-                    <p className="text-primary text-xs mt-1 font-semibold">
-                      {stat.change}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="space-y-2 pt-4">
-                {[1, 2, 3].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="flex items-center justify-between p-4 rounded-lg bg-background/50 border border-primary/5"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                  >
-                    <div className="flex-1">
-                      <p className="font-medium text-foreground text-sm">
-                        Facility {i + 1}
-                      </p>
-                      <p className="text-muted-foreground text-xs">
-                        Operating normally • Peak output
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-semibold text-primary text-sm">98%</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/10 pointer-events-none rounded-3xl" />
+            <div className="relative rounded-3xl overflow-hidden bg-background/60 border border-primary/10">
+              <Image
+                src="/dashboard-preview.jpg"
+                alt="SolarFlow Dashboard"
+                width={1400}
+                height={800}
+                className="w-full h-auto object-cover rounded-3xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-50 rounded-3xl" />
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-accent/10 blur-3xl opacity-30 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             className="text-center mb-20"
             initial="hidden"
@@ -694,8 +623,15 @@ export default function Home() {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-balance text-foreground"
               variants={itemVariants}
             >
-              Trusted by Solar Leaders
+              Trusted by Industry Leaders
             </motion.h2>
+            <motion.p
+              className="text-muted-foreground text-lg mt-6 max-w-2xl mx-auto"
+              variants={itemVariants}
+            >
+              Companies worldwide rely on SolarFlow AI to optimize their
+              operations
+            </motion.p>
           </motion.div>
 
           <motion.div
@@ -707,45 +643,73 @@ export default function Home() {
           >
             {[
               {
-                quote: "Increased our output by 28% in just 3 months.",
+                quote:
+                  "SolarFlow increased our output by 28% in just 3 months. The ROI was incredible.",
                 author: "Sarah Chen",
-                role: "Operations Director",
+                role: "Operations Director, GreenTech Energy",
                 initials: "SC",
+                rating: 5,
               },
               {
-                quote: "The predictive maintenance saved us $150K last year.",
+                quote:
+                  "Predictive maintenance alone saved us over $150K last year. Highly recommended.",
                 author: "Mike Johnson",
-                role: "CEO",
+                role: "CEO, Solar Solutions Ltd",
                 initials: "MJ",
+                rating: 5,
               },
               {
-                quote: "Best investment we made for our solar division.",
+                quote:
+                  "Best investment we made for our solar division. The team is responsive and helpful.",
                 author: "Emma Davis",
-                role: "Plant Manager",
+                role: "Plant Manager, Renewable Corp",
                 initials: "ED",
+                rating: 5,
               },
             ].map((testimonial, i) => (
               <motion.div
                 key={i}
                 variants={itemVariants}
-                whileHover={{ y: -4 }}
-                className="p-6 rounded-2xl border border-primary/10 bg-card/30 backdrop-blur-sm"
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-card/50 to-background/30 backdrop-blur-sm hover:border-primary/40 transition-all duration-300 overflow-hidden"
               >
-                <HiSparkles className="w-5 h-5 text-primary mb-4" />
-                <p className="text-foreground font-medium mb-6 text-lg">
-                  {testimonial.quote}
-                </p>
-                <div className="flex items-center gap-3 pt-4 border-t border-primary/10">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-xs font-bold text-foreground">
-                    {testimonial.initials}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-transparent to-accent/0 group-hover:from-primary/5 group-hover:to-accent/5 pointer-events-none transition-all duration-300" />
+
+                <div className="relative z-10">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <motion.span
+                        key={i}
+                        initial={{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1 }}
+                        className="text-primary text-lg"
+                      >
+                        ★
+                      </motion.span>
+                    ))}
                   </div>
-                  <div>
-                    <p className="font-semibold text-foreground text-sm">
-                      {testimonial.author}
-                    </p>
-                    <p className="text-muted-foreground text-xs">
-                      {testimonial.role}
-                    </p>
+
+                  <p className="text-foreground font-medium mb-8 text-lg leading-relaxed">
+                    {testimonial.quote}
+                  </p>
+
+                  <div className="flex items-center gap-4 pt-6 border-t border-primary/10">
+                    <motion.div
+                      className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-xs font-bold text-foreground shadow-lg shadow-primary/20"
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      {testimonial.initials}
+                    </motion.div>
+                    <div>
+                      <p className="font-semibold text-foreground text-sm">
+                        {testimonial.author}
+                      </p>
+                      <p className="text-muted-foreground text-xs">
+                        {testimonial.role}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -755,8 +719,11 @@ export default function Home() {
       </section>
 
       {/* Pricing */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-card/20 to-transparent">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-primary/10 pointer-events-none" />
+        <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-primary/10 blur-3xl opacity-40 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             className="text-center mb-20"
             initial="hidden"
@@ -774,8 +741,14 @@ export default function Home() {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-balance text-foreground"
               variants={itemVariants}
             >
-              Transparent Pricing
+              Simple, Transparent Pricing
             </motion.h2>
+            <motion.p
+              className="text-muted-foreground text-lg mt-6 max-w-2xl mx-auto"
+              variants={itemVariants}
+            >
+              Choose the plan that scales with your business
+            </motion.p>
           </motion.div>
 
           <motion.div
@@ -952,7 +925,7 @@ export default function Home() {
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-balance text-foreground"
             variants={itemVariants}
           >
-            Ready to Maximize Your Solar Output?
+            AI-Powered Solar CRM for Modern Energy Teams
           </motion.h2>
           <motion.p
             className="text-muted-foreground text-xl max-w-2xl mx-auto"
