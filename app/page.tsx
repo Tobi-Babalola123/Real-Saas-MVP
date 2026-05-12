@@ -3,6 +3,16 @@
 import { motion } from "framer-motion";
 import { BiSolidLeaf } from "react-icons/bi";
 import {
+  SiOpenai,
+  SiWhatsapp,
+  SiHubspot,
+  SiStripe,
+  SiSlack,
+  SiZapier,
+  SiGmail,
+  SiSupabase,
+} from "react-icons/si";
+import {
   MdDashboard,
   MdSpeed,
   MdTrendingUp,
@@ -839,6 +849,104 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-primary text-sm font-semibold uppercase mb-4">
+            Integrations
+          </p>
+
+          <h2 className="text-5xl font-bold mb-4">Connect Your Workflow</h2>
+
+          <p className="text-gray-400 max-w-2xl mx-auto mb-14">
+            Integrate SolarFlow with your favorite tools for automation,
+            communication, payments, AI workflows, and CRM operations.
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              {
+                name: "OpenAI",
+                icon: SiOpenai,
+              },
+              {
+                name: "WhatsApp",
+                icon: SiWhatsapp,
+              },
+              {
+                name: "HubSpot",
+                icon: SiHubspot,
+              },
+              {
+                name: "Stripe",
+                icon: SiStripe,
+              },
+              {
+                name: "Slack",
+                icon: SiSlack,
+              },
+              {
+                name: "Zapier",
+                icon: SiZapier,
+              },
+              {
+                name: "Gmail",
+                icon: SiGmail,
+              },
+              {
+                name: "Supabase",
+                icon: SiSupabase,
+              },
+            ].map((tool, i) => {
+              const Icon = tool.icon;
+
+              return (
+                <div
+                  key={i}
+                  className="
+              group
+              rounded-3xl
+              border
+              border-white/10
+              bg-white/[0.03]
+              backdrop-blur-xl
+              p-8
+              flex
+              flex-col
+              items-center
+              justify-center
+              gap-4
+              hover:border-primary/40
+              hover:bg-primary/[0.04]
+              transition-all
+              duration-300
+            "
+                >
+                  <div
+                    className="
+                w-16
+                h-16
+                rounded-2xl
+                bg-black/40
+                border
+                border-white/10
+                flex
+                items-center
+                justify-center
+                group-hover:scale-110
+                transition-transform
+              "
+                  >
+                    <Icon className="text-3xl text-primary" />
+                  </div>
+
+                  <p className="font-semibold text-white">{tool.name}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
