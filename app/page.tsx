@@ -182,7 +182,7 @@ export default function Home() {
           >
             <HiSparkles className="w-4 h-4 text-primary" />
             <span className="text-xs font-semibold text-primary">
-              AI-Powered Solar Management
+              Smart Lead Automation for Solar Companies
             </span>
           </motion.div>
 
@@ -192,9 +192,9 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            AI-Powered Solar CRM{" "}
+            Close More Solar Deals{" "}
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              for Modern Energy Teams
+              with One CRM
             </span>
           </motion.h1>
 
@@ -204,8 +204,9 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Capture leads, automate follow-ups, manage deals, and grow your
-            solar business with AI-powered workflows.
+            Capture solar leads, manage your sales pipeline, automate
+            follow-ups, and convert more prospects into paying customers all
+            from one powerful CRM platform.
           </motion.p>
 
           <motion.div
@@ -475,14 +476,15 @@ export default function Home() {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-balance text-foreground"
               variants={itemVariants}
             >
-              Powerful Tools for Solar Teams
+              Powerful Tools for Solar Sales Teams
             </motion.h2>
             <motion.p
               className="text-muted-foreground text-lg mt-6 max-w-2xl mx-auto"
               variants={itemVariants}
             >
-              Everything you need to monitor, optimize, and manage your solar
-              operations
+              Capture leads, track conversations, manage follow-ups, and
+              organize your entire solar sales workflow from one centralized
+              platform.
             </motion.p>
           </motion.div>
 
@@ -496,38 +498,38 @@ export default function Home() {
             {[
               {
                 icon: MdDashboard,
-                title: "Real-Time Monitoring",
+                title: "Lead Pipeline Management",
                 features: [
-                  "Live performance metrics",
-                  "System health alerts",
-                  "Issue detection",
+                  "Drag-and-drop sales stages",
+                  "Real-time lead tracking",
+                  "Centralized customer pipeline",
                 ],
               },
               {
                 icon: MdAutoAwesome,
-                title: "AI Optimization",
+                title: "Smart Sales Automation",
                 features: [
-                  "Predictive maintenance",
-                  "Automated tuning",
-                  "Smart recommendations",
+                  "Automated follow-up reminders",
+                  "AI-ready lead qualification",
+                  "WhatsApp & email workflows",
                 ],
               },
               {
                 icon: MdTrendingUp,
-                title: "Analytics & Insights",
+                title: "Analytics & Reporting",
                 features: [
-                  "Performance trends",
-                  "ROI tracking",
-                  "Custom reports",
+                  "Conversion tracking",
+                  "Sales performance insights",
+                  "Lead source analytics",
                 ],
               },
               {
                 icon: BiSolidLeaf,
-                title: "Energy Management",
+                title: "Team Collaboration",
                 features: [
-                  "Peak shaving",
-                  "Load balancing",
-                  "Efficiency scoring",
+                  "Assign leads to team members",
+                  "Internal notes & activity logs",
+                  "Multi-user CRM access",
                 ],
               },
             ].map((feature, i) => {
@@ -577,14 +579,14 @@ export default function Home() {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-balance text-foreground mb-6"
               variants={itemVariants}
             >
-              Intelligent Control Center
+              Sales Intelligence Dashboard
             </motion.h2>
             <motion.p
               className="text-muted-foreground text-lg max-w-2xl mx-auto"
               variants={itemVariants}
             >
-              Real-time monitoring with AI-powered insights and predictive
-              analytics
+              Track leads, monitor team activity, manage follow-ups, and gain
+              real-time visibility into your entire solar sales pipeline.
             </motion.p>
           </motion.div>
 
@@ -633,14 +635,15 @@ export default function Home() {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-balance text-foreground"
               variants={itemVariants}
             >
-              Trusted by Industry Leaders
+              Trusted by Growing Solar Teams
             </motion.h2>
             <motion.p
               className="text-muted-foreground text-lg mt-6 max-w-2xl mx-auto"
               variants={itemVariants}
             >
-              Companies worldwide rely on SolarFlow AI to optimize their
-              operations
+              Solar companies use SolarFlow to capture leads, streamline
+              follow-ups, and manage their entire sales workflow from one
+              platform.
             </motion.p>
           </motion.div>
 
@@ -654,7 +657,7 @@ export default function Home() {
             {[
               {
                 quote:
-                  "SolarFlow increased our output by 28% in just 3 months. The ROI was incredible.",
+                  "SolarFlow helped our sales team organize incoming leads and follow up faster. We stopped losing opportunities in spreadsheets.",
                 author: "Sarah Chen",
                 role: "Operations Director, GreenTech Energy",
                 initials: "SC",
@@ -662,7 +665,7 @@ export default function Home() {
               },
               {
                 quote:
-                  "Predictive maintenance alone saved us over $150K last year. Highly recommended.",
+                  "The pipeline system made it easy to track prospects from inquiry to closed deal. Our workflow became much more efficient.",
                 author: "Mike Johnson",
                 role: "CEO, Solar Solutions Ltd",
                 initials: "MJ",
@@ -670,7 +673,7 @@ export default function Home() {
               },
               {
                 quote:
-                  "Best investment we made for our solar division. The team is responsive and helpful.",
+                  "We finally have one place to manage leads, reminders, team notes, and customer conversations. It simplified everything.",
                 author: "Emma Davis",
                 role: "Plant Manager, Renewable Corp",
                 initials: "ED",
@@ -747,17 +750,29 @@ export default function Home() {
             >
               Pricing
             </motion.p>
+
             <motion.h2
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-balance text-foreground"
               variants={itemVariants}
             >
               Simple, Transparent Pricing
             </motion.h2>
+
             <motion.p
               className="text-muted-foreground text-lg mt-6 max-w-2xl mx-auto"
               variants={itemVariants}
             >
-              Choose the plan that scales with your business
+              Built for solar companies that want to automate lead capture,
+              follow-ups, and pipeline tracking without increasing sales
+              headcount.
+            </motion.p>
+
+            <motion.p
+              className="text-sm text-muted-foreground mt-4 max-w-xl mx-auto"
+              variants={itemVariants}
+            >
+              Businesses using SolarFlow typically recover their monthly cost
+              after closing just 1–2 additional deals.
             </motion.p>
           </motion.div>
 
@@ -772,31 +787,37 @@ export default function Home() {
               {
                 name: "Starter",
                 price: "$299",
+                description:
+                  "For small solar teams starting to organize leads and automate basic follow-ups.",
                 features: [
-                  "Up to 5 facilities",
-                  "Real-time monitoring",
-                  "Email support",
+                  "Manage up to 5 solar facilities",
+                  "Real-time lead tracking dashboard",
+                  "Email support for onboarding",
                 ],
               },
               {
                 name: "Growth",
                 price: "$799",
-                features: [
-                  "Up to 20 facilities",
-                  "Predictive maintenance",
-                  "Priority support",
-                  "API access",
-                ],
                 highlight: true,
+                description:
+                  "Most popular for growing solar companies scaling installations and improving conversion rates.",
+                features: [
+                  "Manage up to 20 facilities",
+                  "Predictive maintenance alerts to reduce downtime",
+                  "Priority support with faster response time",
+                  "Full API access for custom automation workflows",
+                ],
               },
               {
                 name: "Enterprise",
                 price: "Custom",
+                description:
+                  "For large solar operations that need full-scale CRM infrastructure and custom integrations.",
                 features: [
-                  "Unlimited facilities",
-                  "Custom integrations",
-                  "Dedicated support",
-                  "SLA",
+                  "Unlimited facilities and pipeline scaling",
+                  "Custom CRM + enterprise system integrations",
+                  "Dedicated account manager",
+                  "Enterprise SLA with uptime guarantees",
                 ],
               },
             ].map((plan, i) => (
@@ -812,12 +833,18 @@ export default function Home() {
               >
                 {plan.highlight && (
                   <div className="absolute -top-4 left-6 px-3 py-1 bg-primary text-foreground text-xs font-bold rounded-full">
-                    POPULAR
+                    MOST POPULAR
                   </div>
                 )}
+
                 <h3 className="text-2xl font-bold text-foreground mb-2">
                   {plan.name}
                 </h3>
+
+                <p className="text-sm text-muted-foreground mb-5">
+                  {plan.description}
+                </p>
+
                 <div className="mb-6">
                   <span className="text-4xl font-bold text-foreground">
                     {plan.price}
@@ -826,6 +853,7 @@ export default function Home() {
                     <span className="text-muted-foreground ml-2">/month</span>
                   )}
                 </div>
+
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, j) => (
                     <li
@@ -837,6 +865,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+
                 <button
                   className={`w-full py-3 rounded-lg font-semibold transition-all ${
                     plan.highlight
@@ -844,7 +873,7 @@ export default function Home() {
                       : "border border-primary/30 text-foreground hover:bg-primary/5"
                   }`}
                 >
-                  Get Started
+                  {plan.highlight ? "Start Scaling" : "Get Started"}
                 </button>
               </motion.div>
             ))}
